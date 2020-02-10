@@ -118,7 +118,6 @@ this.waitFor({
 ```
 
 To retrieve a message toast control and manipulate it accordingly, use standard jQuery selectors with the help of the `check` parameter of OPA5 `waitFor` method, as `messageToast` elements cannot be retrieved by interaction with the OpenUI5 API.
-
 Example:
 
 ``` js
@@ -141,6 +140,8 @@ iShouldSeeMessageToastAppearance: function () {
 ***
 
 <a name="loioce4b180d97064ad088a901b53ed48b21__section_yy3_5gr_p2b"/>
+
+Please be especially carefull when adding aditional selectors (like viewName or viewNamespace ) and in cases where you have view navigation immeditelly before or during the message toast display. Due to the disabled autoWaiter, the timing of the check() and the navigation is not guaranteed and so you could have random failures when no controls are matched and so the check() method is not called at all.
 
 ### Working with Busy Controls
 
